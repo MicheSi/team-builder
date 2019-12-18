@@ -12,7 +12,11 @@ function App(props) {
       role: 'default role'
     }
   ]);
-
+  const [currentUser, setCurrentUser] = useState({
+    name: '',
+    email: '',
+    role: ''
+  });
   const [editing, setEditing] = useState(false);
 
   const addTeamMember = person => {
@@ -23,6 +27,11 @@ function App(props) {
     };
     setTeamMember([...teamMember, newTeamMember]);
   };
+
+  const memberToEdit = person => {
+    setEditing(true)
+    setCurrentUser({name: person.name, email: person.email, role: person.role})
+  }
 
   
 
