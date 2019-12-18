@@ -13,10 +13,19 @@ function App(props) {
     }
   ]);
 
+  const addTeamMember = person => {
+    const newTeamMember = {
+      name: person.name,
+      email: person.email,
+      role: person.role
+    };
+    setTeamMember([...teamMember, newTeamMember]);
+  };
+
   return (
     <div className="App">
       <h1>Team Member List</h1>
-      <Form />
+      <Form addTeamMember={addTeamMember}/>
       <TeamMember teamMember={teamMember}/>
     </div>
   );

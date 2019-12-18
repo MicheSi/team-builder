@@ -11,8 +11,14 @@ const Form = props => {
         setTeamMember({...teamMember, [e.target.name]: e.target.value});
     };
 
+    const submitForm = e => {
+        e.preventDefault();
+        props.addTeamMember(teamMember);
+        setTeamMember({name:'', email:'', role:''});
+    };
+
     return (
-        <form>
+        <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>
             <input
              id='name'
