@@ -13,6 +13,8 @@ function App(props) {
     }
   ]);
 
+  const [editing, setEditing] = useState(false);
+
   const addTeamMember = person => {
     const newTeamMember = {
       name: person.name,
@@ -21,6 +23,8 @@ function App(props) {
     };
     setTeamMember([...teamMember, newTeamMember]);
   };
+
+  
 
   return (
     <div className="App">
