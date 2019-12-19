@@ -33,13 +33,18 @@ function App(props) {
     setCurrentUser({name: person.name, email: person.email, role: person.role})
   }
 
+  const updateMember = (name, updatedMember) => {
+    setEditing(true);
+
+    setTeamMember(teamMember.map(person => (person.name === name ? updatedMember : person)))
+  }
   
 
   return (
     <div className="App">
       <h1>Team Member List</h1>
       <Form addTeamMember={addTeamMember}/>
-      <TeamMember teamMember={teamMember}/>
+      <TeamMember teamMember={teamMember} memberToEdit={memberToEdit}/>
     </div>
   );
 }

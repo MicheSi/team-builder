@@ -10,6 +10,7 @@ const TeamMember = props => {
                     <h2>Name: {person.name}</h2>
                     <p>Email: {person.email}</p>
                     <p>Role: {person.role}</p>
+                    <button onClick={()=>{props.memberToEdit(person)}}>Edit</button>
                 </div>
             ))}
         </div>
